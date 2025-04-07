@@ -11,7 +11,18 @@ module.exports = grammar({
   name: "easybuild",
 
   rules: {
-    // TODO: add the actual grammar rules
-    source_file: $ => "hello"
-  }
+    source_file: ($) => repeat($._definition),
+
+    _definition: ($) => choice($.string_definition, $.version_definition),
+
+    string_definition: ($) => seq($.identifier, "=", $.value_string),
+
+    version_definition: ($) => seq("version =", $.version_string),
+
+    identifier: ($) => /[a-z]+/,
+
+    value_string: ($) => /\'.+\'/,
+
+    version_string: ($) => /\'\d+(\.\d+)*\'/,
+  },
 });

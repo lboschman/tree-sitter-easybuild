@@ -1,0 +1,26 @@
+================
+Name definition
+================
+
+name = 'My Favourite 1st Package!'
+
+---
+
+(source_file
+  (string_definition
+    (identifier)
+    (value_string)
+  )
+)
+
+===================
+Version definition
+===================
+
+version = '0.3.12'
+
+---
+
+(source_file
+  (version_definition
+    (version_string)))
