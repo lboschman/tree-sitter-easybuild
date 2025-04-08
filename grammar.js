@@ -21,7 +21,7 @@ module.exports = grammar({
 
     identifier: ($) => /[a-z]+/,
 
-    value_string: ($) => /\'.+\'/,
+    value_string: ($) => /\'[^\']+\'/,
 
     version_string: ($) => /\'\d+(\.\d+)*\'/,
   },

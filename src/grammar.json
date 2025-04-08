@@ -75,7 +75,7 @@
     },
     "value_string": {
       "type": "PATTERN",
-      "value": "\\'.+\\'"
+      "value": "\\'[^\\']+\\'"
     },
     "version_string": {
       "type": "PATTERN",

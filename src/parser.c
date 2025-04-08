@@ -145,19 +145,16 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       if (lookahead == '\'') ADVANCE(22);
       if (lookahead == '.') ADVANCE(2);
       if (('0' <= lookahead && lookahead <= '9')) ADVANCE(1);
-      if (lookahead != 0 &&
-          lookahead != '\n') ADVANCE(3);
+      if (lookahead != 0) ADVANCE(3);
       END_STATE();
     case 2:
       if (lookahead == '\'') ADVANCE(22);
       if (('0' <= lookahead && lookahead <= '9')) ADVANCE(1);
-      if (lookahead != 0 &&
-          lookahead != '\n') ADVANCE(3);
+      if (lookahead != 0) ADVANCE(3);
       END_STATE();
     case 3:
       if (lookahead == '\'') ADVANCE(22);
-      if (lookahead != 0 &&
-          lookahead != '\n') ADVANCE(3);
+      if (lookahead != 0) ADVANCE(3);
       END_STATE();
     case 4:
       if (lookahead == '\'') ADVANCE(9);
@@ -180,14 +177,14 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
     case 8:
       if (('0' <= lookahead && lookahead <= '9')) ADVANCE(1);
       if (lookahead != 0 &&
-          lookahead != '\n') ADVANCE(3);
+          lookahead != '\'') ADVANCE(3);
       END_STATE();
     case 9:
       if (('0' <= lookahead && lookahead <= '9')) ADVANCE(5);
       END_STATE();
     case 10:
       if (lookahead != 0 &&
-          lookahead != '\n') ADVANCE(3);
+          lookahead != '\'') ADVANCE(3);
       END_STATE();
     case 11:
       ACCEPT_TOKEN(ts_builtin_sym_end);
@@ -239,9 +236,6 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       END_STATE();
     case 22:
       ACCEPT_TOKEN(sym_value_string);
-      if (lookahead == '\'') ADVANCE(22);
-      if (lookahead != 0 &&
-          lookahead != '\n') ADVANCE(3);
       END_STATE();
     case 23:
       ACCEPT_TOKEN(sym_version_string);
