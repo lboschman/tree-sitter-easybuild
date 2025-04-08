@@ -1,5 +1,24 @@
 [
   {
+    "type": "array_definition",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "string_array",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "source_file",
     "named": true,
     "root": true,
@@ -9,11 +28,30 @@
       "required": false,
       "types": [
         {
+          "type": "array_definition",
+          "named": true
+        },
+        {
           "type": "string_definition",
           "named": true
         },
         {
           "type": "version_definition",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "string_array",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "value_string",
           "named": true
         }
       ]
@@ -54,7 +92,19 @@
     }
   },
   {
+    "type": ",",
+    "named": false
+  },
+  {
     "type": "=",
+    "named": false
+  },
+  {
+    "type": "[",
+    "named": false
+  },
+  {
+    "type": "]",
     "named": false
   },
   {

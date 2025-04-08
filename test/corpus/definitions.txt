@@ -24,3 +24,22 @@ version = '0.3.12'
 (source_file
   (version_definition
     (version_string)))
+
+========================
+String array definition
+========================
+
+mylist = ['hello', 'world', 'spam', 'eggs']
+
+---
+
+(source_file
+  (array_definition
+  (identifier)
+  (string_array
+    (value_string)
+    (value_string)
+    (value_string)
+    (value_string)
+  ))
+)
